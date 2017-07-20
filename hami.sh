@@ -1,13 +1,17 @@
 # Install Create React app
-# Create a new React app with some default packages
-# Redux option
-# Styled Components option
+# Create a new React app with default packages
+# Adds axios config
+#
 #
 #
 #!/bin/bash
 
-NPM_PACKAGES="axios prop-types react-router-dom"
+NPM_PACKAGES="axios prop-types react-router-dom styled-components normalize.css"
 REDUX_PACKAGES="redux react-redux redux-thunk"
+DEV_PACKAGES="esdoc eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react"
+FOLDERS="api components containers helpers redux styled-components"
+GITHUB_RAW_URL="https://raw.githubusercontent.com/searleb/hamish/master"
+GITHUB_FOLDER_URL="https://github.com/searleb/hamish/trunk"
 
 if [ "$1" == "install" ]
 then
@@ -17,37 +21,32 @@ then
 
 elif [ "$1" == "test" ]
 then
-  echo "test"
-  read tester
+  svn export $GITHUB_FOLDER_URL/esdoc testfolder
 
 elif [ "$1" == "create-app" ]
 then
   read -p "What would you like the app name to be? " appname
   create-react-app $appname
   cd ./$appname
-  echo "Installing Hamish defaults: $NPM_PACKAGES"
-  npm install --save $NPM_PACKAGES
 
-  read -p "Install Redux? Y/n" redux
-  if [ $redux == "Y" -o $redux == "y" ]
-  then
-    echo "Installing: $REDUX_PACKAGES"
-    npm install --save $REDUX_PACKAGES
-  fi
+  echo "Removing default fies to be replaced"
+  cd ./src
+  rm App.js App.css index.js index.css logo.svg
+  cd ..
 
-  read -p "Install Styled Components? Y/n" styled
-  if [ $styled == "Y" -o $styled == "y" ]
-  then
-    npm install --save styled-components
-  fi
+  echo "Installing Hamish npm packages: $NPM_PACKAGES $REDUX_PACKAGES"
+  npm install --save $NPM_PACKAGES $REDUX_PACKAGES
 
-  read -p "Install esdoc? Y/n" esdoc
-  if [ $esdoc == "Y" -o $esdoc == "y" ]
-  then
-    npm install --save-dev esdoc
-    curl https://raw.githubusercontent.com/searleb/hamish/master/esdoc/.esdoc.json -o .esdoc.json
-  fi
-  echo "Complete"
+  echo "Installing Hamish dev packages: $DEV_PACKAGES"
+  npm install --save-dev $DEV_PACKAGES
+
+  echo "Pulling ./src folder"
+  svn export $GITHUB_FOLDER_URL/src
+
+  echo "Pulling config files"
+  curl https://raw.githubusercontent.com/searleb/hamish/master/config/.esdoc.json -o .esdoc.json
+  curl https://raw.githubusercontent.com/searleb/hamish/master/config/.env -o .env
+  curl https://raw.githubusercontent.com/searleb/hamish/master/config/.eslintrc -o .eslintrc
 
 elif [ "$1" == "help" ]
 then
