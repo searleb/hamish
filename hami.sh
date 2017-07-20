@@ -34,6 +34,8 @@ then
   rm App.js App.css index.js index.css logo.svg
   cd ..
 
+  mv ./src ./temp
+
   echo "Installing Hamish npm packages: $NPM_PACKAGES $REDUX_PACKAGES"
   npm install --save $NPM_PACKAGES $REDUX_PACKAGES
 
@@ -42,6 +44,8 @@ then
 
   echo "Pulling ./src folder"
   svn export $GITHUB_FOLDER_URL/src
+  cp ./temp/App.test.js ./src/App.test.js
+  cp ./temp/registerServiceWorker.js ./src/registerServiceWorker.js
 
   echo "Pulling config files"
   curl https://raw.githubusercontent.com/searleb/hamish/master/config/.esdoc.json -o .esdoc.json
