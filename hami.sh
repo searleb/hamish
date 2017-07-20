@@ -30,19 +30,14 @@ then
 
   echo "Installing Hamish defaults: $NPM_PACKAGES $REDUX_PACKAGES"
   npm install --save $NPM_PACKAGES $REDUX_PACKAGES
-  echo "Installed packages"
 
   echo "Creating folders"
   cd src
   mkdir $FOLDERS
-  echo "Created folders"
 
   echo "Setting up API config"
   curl $GITHUB_URL/api/config.js -o api/config.js
-  echo "Done"
-
-
-
+  curl $GITHUB_URL/api/example.js -o api/example.js
 
 
   # read -p "Install Redux? Y/n" redux
