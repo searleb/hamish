@@ -10,13 +10,14 @@ const NotFound404 = () => (
   </div>
 )
 
+const Home = () => <h1>Home</h1>
+
 const App = () => (
   <BrowserRouter>
     <ThemeProvider theme={theme}>
       <Switch>
         <Route exact path='/' component={Home} />
-        {/* {process.env.NODE_ENV === 'development' &&
-        } */}
+        {/* {process.env.NODE_ENV === 'development' && <DevOnlyComponent /> } */}
         <Route component={NotFound404} />
       </Switch>
     </ThemeProvider>
