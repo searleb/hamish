@@ -6,7 +6,7 @@
 #
 #!/bin/bash
 
-NPM_PACKAGES="axios prop-types react-router-dom styled-components"
+NPM_PACKAGES="axios prop-types react-router-dom styled-components esdoc"
 REDUX_PACKAGES="redux react-redux redux-thunk"
 FOLDERS="api components containers helpers redux styled-components"
 GITHUB_RAW_URL="https://raw.githubusercontent.com/searleb/hamish/master"
@@ -31,36 +31,12 @@ then
   echo "Installing Hamish defaults: $NPM_PACKAGES $REDUX_PACKAGES"
   npm install --save $NPM_PACKAGES $REDUX_PACKAGES
 
-  echo "Creating folders"
-  cd src
-  mkdir $FOLDERS
-
-  echo "Setting up API config"
+  echo "Pulling ./src folder"
   svn export $GITHUB_FOLDER_URL/api
 
-  echo "Setting up"
-
-
-  # read -p "Install Redux? Y/n" redux
-  # if [ $redux == "Y" -o $redux == "y" ]
-  # then
-  #   echo "Installing: $REDUX_PACKAGES"
-  #   npm install --save $REDUX_PACKAGES
-  # fi
-  #
-  # read -p "Install Styled Components? Y/n" styled
-  # if [ $styled == "Y" -o $styled == "y" ]
-  # then
-  #   npm install --save styled-components
-  # fi
-
-  # read -p "Install esdoc? Y/n" esdoc
-  # if [ $esdoc == "Y" -o $esdoc == "y" ]
-  # then
-  #   npm install --save-dev esdoc
-  #   curl https://raw.githubusercontent.com/searleb/hamish/master/esdoc/.esdoc.json -o .esdoc.json
-  # fi
-  # echo "Complete"
+  echo "Pulling config files"
+  cd ..
+  curl https://raw.githubusercontent.com/searleb/hamish/master/esdoc/.esdoc.json -o .esdoc.json
 
 elif [ "$1" == "help" ]
 then
