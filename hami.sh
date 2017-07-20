@@ -1,5 +1,8 @@
 # Install Create React app
-# Create a new React app
+# Create a new React app with some default packages
+# Redux option
+# Styled Components option
+#
 #
 #!/bin/bash
 
@@ -38,6 +41,7 @@ then
 elif [ "$1" == "help" ]
 then
   echo "./hami.sh install    Installs create-react-app"
+  echo "./hami.sh create-app    Creates react app with some extra default packages and optionals"
 
 else
   echo "I'm Hamish"
