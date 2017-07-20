@@ -6,7 +6,7 @@
 #
 #!/bin/bash
 
-NPM_PACKAGES="axios prop-types react-router-dom styled-components esdoc"
+NPM_PACKAGES="axios prop-types react-router-dom styled-components esdoc normalize.css"
 REDUX_PACKAGES="redux react-redux redux-thunk"
 FOLDERS="api components containers helpers redux styled-components"
 GITHUB_RAW_URL="https://raw.githubusercontent.com/searleb/hamish/master"
