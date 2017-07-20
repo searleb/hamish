@@ -2,7 +2,7 @@
 
 Take a copy of `hami.sh` and copy it to where ever you want to start a new `create-react-app`.
 
-From you folder run:
+From your folder run:
 
 ```sh
 ./hami.sh go
