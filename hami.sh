@@ -15,26 +15,37 @@ then
   npm install -g create-react-app
   echo "Complete"
 
+elif [ "$1" == "test" ]
+then
+  echo "test"
+  read tester
+
 elif [ "$1" == "create-app" ]
 then
-  echo "What would you like the app name to be?"
-  read appname
+  read -p "What would you like the app name to be? " appname
   create-react-app $appname
   cd ./$appname
+  echo "Installing Hamish defaults: $NPM_PACKAGES"
   npm install --save $NPM_PACKAGES
 
-  echo "Install Redux? Y/n"
-  read redux
-  if [ $redux == "Y" ]
+  read -p "Install Redux? Y/n" redux
+  if [ $redux == "Y" -o $redux == "y" ]
   then
+    echo "Installing: $REDUX_PACKAGES"
     npm install --save $REDUX_PACKAGES
   fi
 
-  echo "Install Styled Components? Y/n"
-  read styled
-  if [ $styled == "Y" ]
+  read -p "Install Styled Components? Y/n" styled
+  if [ $styled == "Y" -o $styled == "y" ]
   then
     npm install --save styled-components
+  fi
+
+  read -p "Install esdoc? Y/n" esdoc
+  if [ $esdoc == "Y" -o $esdoc == "y" ]
+  then
+    npm install --save-dev esdoc
+    curl https://raw.githubusercontent.com/searleb/hamish/master/esdoc/.esdoc.json -o .esdoc.json
   fi
   echo "Complete"
 
