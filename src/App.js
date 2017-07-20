@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch, Link } from 'react-router-dom'
-import styled, { ThemeProvider } from 'styled-components'
+import { ThemeProvider } from 'styled-components'
 import { theme } from './styled-components/theme'
 
 const NotFound404 = () => (
