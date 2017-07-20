@@ -63,8 +63,8 @@ then
 elif [ "$1" == "help" ]
 then
   echo "./hami.sh install    Installs create-react-app"
-  echo "./hami.sh create-app    Creates react app with some extra default packages and optionals"
+  echo "./hami.sh go    Creates react app and adds redux, routing, axios and config"
 
 else
-  echo "I'm Hamish"
+  echo "I'm Hamish!"
 fi
