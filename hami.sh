@@ -1,7 +1,7 @@
 # Install Create React app
-# Create a new React app with some default packages
-# Redux option
-# Styled Components option
+# Create a new React app with default packages
+# Adds axios config
+#
 #
 #
 #!/bin/bash
@@ -9,7 +9,8 @@
 NPM_PACKAGES="axios prop-types react-router-dom styled-components"
 REDUX_PACKAGES="redux react-redux redux-thunk"
 FOLDERS="api components containers helpers redux styled-components"
-GITHUB_URL="https://raw.githubusercontent.com/searleb/hamish/master"
+GITHUB_RAW_URL="https://raw.githubusercontent.com/searleb/hamish/master"
+GITHUB_FOLDER_URL="https://github.com/searleb/hamish/trunk"
 
 if [ "$1" == "install" ]
 then
@@ -19,8 +20,7 @@ then
 
 elif [ "$1" == "test" ]
 then
-  echo $GITHUB_URL/api/config.js -o api/config.js
-  read tester
+  svn export $GITHUB_FOLDER_URL/esdoc testfolder
 
 elif [ "$1" == "create-app" ]
 then
@@ -36,8 +36,9 @@ then
   mkdir $FOLDERS
 
   echo "Setting up API config"
-  curl $GITHUB_URL/api/config.js -o api/config.js
-  curl $GITHUB_URL/api/example.js -o api/example.js
+  svn export $GITHUB_FOLDER_URL/api
+
+  echo "Setting up"
 
 
   # read -p "Install Redux? Y/n" redux
