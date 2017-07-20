@@ -1,14 +1,19 @@
 # Install Create React app
-# Create a new React app with default packages
-# Adds axios config
-#
-#
+# Create a new React app with:
+# react router
+# redux
+# axios
+# styled components
+# normalize
+# redux form
+# esdoc
+# eslint
 #
 #!/bin/bash
 
-NPM_PACKAGES="axios prop-types react-router-dom styled-components normalize.css"
+NPM_PACKAGES="axios prop-types react-router-dom styled-components normalize.css redux-form"
 REDUX_PACKAGES="redux react-redux redux-thunk"
-DEV_PACKAGES="esdoc eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react"
+DEV_PACKAGES="esdoc eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y@5 eslint-plugin-react"
 FOLDERS="api components containers helpers redux styled-components"
 GITHUB_RAW_URL="https://raw.githubusercontent.com/searleb/hamish/master"
 GITHUB_FOLDER_URL="https://github.com/searleb/hamish/trunk"
@@ -23,7 +28,7 @@ elif [ "$1" == "test" ]
 then
   svn export $GITHUB_FOLDER_URL/esdoc testfolder
 
-elif [ "$1" == "create-app" ]
+elif [ "$1" == "go" ]
 then
   read -p "What would you like the app name to be? " appname
   create-react-app $appname
@@ -46,11 +51,14 @@ then
   svn export $GITHUB_FOLDER_URL/src
   cp ./temp/App.test.js ./src/App.test.js
   cp ./temp/registerServiceWorker.js ./src/registerServiceWorker.js
+  rm -rf ./temp
 
   echo "Pulling config files"
   curl https://raw.githubusercontent.com/searleb/hamish/master/config/.esdoc.json -o .esdoc.json
   curl https://raw.githubusercontent.com/searleb/hamish/master/config/.env -o .env
   curl https://raw.githubusercontent.com/searleb/hamish/master/config/.eslintrc -o .eslintrc
+
+  npm run start
 
 elif [ "$1" == "help" ]
 then
