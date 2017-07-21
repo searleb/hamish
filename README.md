@@ -8,6 +8,8 @@ From your folder run:
 ./hami.sh go
 ```
 
+`hami.sh` will use `yarn` if detected, otherwise will default to `npm`.
+
 
 Hamish will then build out a react app with:
 - react router
