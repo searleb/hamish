@@ -11,7 +11,7 @@
 #
 #!/bin/bash
 
-NPM_PACKAGES="axios prop-types react-router-dom styled-components normalize.css redux-form"
+PACKAGES="axios prop-types react-router-dom styled-components normalize.css redux-form"
 REDUX_PACKAGES="redux react-redux redux-thunk"
 DEV_PACKAGES="esdoc eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y@5 eslint-plugin-react"
 FOLDERS="api components containers helpers redux styled-components"
@@ -34,18 +34,24 @@ then
   create-react-app $appname
   cd ./$appname
 
-  echo "Removing default fies to be replaced"
+  echo "Removing default files to be replaced"
   cd ./src
   rm App.js App.css index.js index.css logo.svg
   cd ..
 
   mv ./src ./temp
 
-  echo "Installing Hamish npm packages: $NPM_PACKAGES $REDUX_PACKAGES"
-  npm install --save $NPM_PACKAGES $REDUX_PACKAGES
-
-  echo "Installing Hamish dev packages: $DEV_PACKAGES"
-  npm install --save-dev $DEV_PACKAGES
+  if which yarn > /dev/null; then
+    echo "Installing Hamish packages with yarn: $PACKAGES $REDUX_PACKAGES"
+    yarn add $PACKAGES $REDUX_PACKAGES
+    echo "Installing Hamish dev packages with yarn: $DEV_PACKAGES"
+    yarn add $DEV_PACKAGES --dev
+  else
+    echo "Installing Hamish packages with npm: $PACKAGES $REDUX_PACKAGES"
+    npm install --save $PACKAGES $REDUX_PACKAGES
+    echo "Installing Hamish dev packages with npm: $DEV_PACKAGES"
+    npm install --save-dev $DEV_PACKAGES
+  fi
 
   echo "Pulling ./src folder"
   svn export $GITHUB_FOLDER_URL/src
@@ -58,7 +64,11 @@ then
   curl https://raw.githubusercontent.com/searleb/hamish/master/config/.env -o .env
   curl https://raw.githubusercontent.com/searleb/hamish/master/config/.eslintrc -o .eslintrc
 
-  npm run start
+  if which yarn > /dev/null; then
+    yarn start
+  else
+    npm run start
+  fi
 
 elif [ "$1" == "help" ]
 then
