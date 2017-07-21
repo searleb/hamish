@@ -20,3 +20,10 @@ Hamish will then build out a react app with:
 - redux form
 - esdoc
 - eslint
+
+## Commands
+`./hami.sh install`: Installs `create-react-app`.
+
+`./hami.sh go`: Kicks off a new `create-react-app` project with.
+
+`./hami.sh help`: Basically this again.
