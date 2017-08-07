@@ -20,6 +20,7 @@ Hamish will then build out a react app with:
 - redux form
 - esdoc
 - eslint
+- hot module replacement
 
 ## Commands
 `./hami.sh install`: Installs `create-react-app`.
