@@ -24,6 +24,6 @@ Hamish will then build out a react app with:
 ## Commands
 `./hami.sh install`: Installs `create-react-app`.
 
-`./hami.sh go`: Kicks off a new `create-react-app` project with.
+`./hami.sh go`: Kicks off a new `create-react-app` project.
 
 `./hami.sh help`: Basically this again.
