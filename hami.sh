@@ -11,7 +11,7 @@
 #
 #!/bin/bash
 
-PACKAGES="axios prop-types react-router-dom styled-components normalize.css redux-form"
+PACKAGES="axios prop-types react-router-dom styled-components normalize.css redux-form grid-styled"
 REDUX_PACKAGES="redux react-redux redux-thunk"
 DEV_PACKAGES="esdoc eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y@5 eslint-plugin-react"
 FOLDERS="api components containers helpers redux styled-components"
