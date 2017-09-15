@@ -7,18 +7,20 @@ export const colors = {
 const fonts = {
 }
 
-const breakpoints = {
-  xs: 'max-width: 576px',
-  sm: 'min-width: 576px',
-  md: 'min-width: 768px',
-  lg: 'min-width: 992px',
-  xl: 'min-width: 1200px',
+// Grid Styled default breakpoints:
+// 40em, 52em, 64em
+const mediaBp = {
+  xs: '(max-width: 40em)',
+  sm: '(min-width: 40em)',
+  md: '(min-width: 52em)',
+  lg: '(min-width: 64em)',
+  xl: '(min-width: 1200px)',
 }
 
 export const theme = {
   colors,
   fonts,
-  breakpoints,
+  mediaBp,
 }
 
 export default theme
