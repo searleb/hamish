@@ -12,15 +12,16 @@ From your folder run:
 
 
 Hamish will then build out a react app with:
-- react router
+- react-router
 - redux
 - axios
-- styled components
+- styled-components
 - normalize
-- redux form
+- redux-form
 - esdoc
 - eslint
 - hot module replacement
+- grid-styled
 
 ## Commands
 `./hami.sh install`: Installs `create-react-app`.
