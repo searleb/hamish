@@ -14,7 +14,7 @@
 PACKAGES="axios prop-types react-router-dom styled-components normalize.css redux-form grid-styled"
 REDUX_PACKAGES="redux react-redux redux-thunk"
 DEV_PACKAGES="esdoc eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y@5 eslint-plugin-react"
-FOLDERS="api components containers helpers redux styled-components"
+FOLDERS="api components containers pages helpers redux styled-components"
 GITHUB_RAW_URL="https://raw.githubusercontent.com/searleb/hamish/master"
 GITHUB_FOLDER_URL="https://github.com/searleb/hamish/trunk"
 
