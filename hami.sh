@@ -4,8 +4,9 @@
 # redux
 # axios
 # styled components
-# normalize
+# normalize.css
 # redux form
+# grid styled
 # esdoc
 # eslint
 #
@@ -63,6 +64,9 @@ then
   curl https://raw.githubusercontent.com/searleb/hamish/master/config/.esdoc.json -o .esdoc.json
   curl https://raw.githubusercontent.com/searleb/hamish/master/config/.env -o .env
   curl https://raw.githubusercontent.com/searleb/hamish/master/config/.eslintrc -o .eslintrc
+  curl https://raw.githubusercontent.com/searleb/hamish/master/hami.sh -o hami.sh
+  chmod +x hami.sh
+
 
   if which yarn > /dev/null; then
     yarn start
@@ -70,10 +74,42 @@ then
     npm run start
   fi
 
+elif [ "$1" == "new" ]
+create() {
+  echo "the param is $1"
+  read -p "$1 name? " name
+  mkdir ./src/$1s/$name
+  cd ./src/$1s/$name
+  touch ./$name.js
+  touch ./$name.test.js
+  break
+}
+then
+  options=("page" "container" "component" "quit")
+  select opt in "${options[@]}"
+  do
+    case $opt in
+    "page")
+        create $opt
+        ;;
+    "container")
+        create $opt
+        ;;
+    "component")
+        create $opt
+        ;;
+    "quit")
+        break
+        ;;
+    *) echo invalid option;;
+esac
+done
+
 elif [ "$1" == "help" ]
 then
   echo "./hami.sh install    Installs create-react-app"
   echo "./hami.sh go    Creates react app and adds redux, routing, axios and config"
+  echo "./hami.sh new    Creates a new page, container or component folder with [name].js and [name].test.js"
 
 else
   echo "I'm Hamish!"
