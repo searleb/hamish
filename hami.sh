@@ -76,12 +76,12 @@ then
 
 elif [ "$1" == "new" ]
 create() {
-  echo "the param is $1"
   read -p "$1 name? " name
   mkdir ./src/$1s/$name
   cd ./src/$1s/$name
   touch ./$name.js
   touch ./$name.test.js
+  echo "$name was created"
   break
 }
 then
