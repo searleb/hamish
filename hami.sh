@@ -78,6 +78,7 @@ elif [ "$1" == "new" ]
 create() {
   read -p "$1 name? " name
   mkdir ./src/$1s/$name
+  echo "export { default as $name } from './$name/$name'" >> ./src/$1s/index.js
   cd ./src/$1s/$name
   touch ./$name.js
   touch ./$name.test.js
