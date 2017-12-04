@@ -28,6 +28,6 @@ Hamish will then build out a react app with:
 
 `./hami.sh go`: Kicks off a new `create-react-app` project.
 
-`./hami.sh new`: Creates a new page, container or component folder with [name].js and [name].test.js files.
+`./hami.sh new`: Creates a new page, container or component folder with [name].js and [name].test.js files. Or a new redux module.
 
 `./hami.sh help`: Basically this again.
