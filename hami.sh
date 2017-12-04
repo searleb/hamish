@@ -85,8 +85,18 @@ create() {
   echo "$name was created"
   break
 }
+
+createReduxModule() {
+  read -p "$1 name? " name
+  echo "export { default as $name } from './$name'" >> ./src/redux/modules/index.js
+  cd ./src/redux/modules
+  touch ./$name.js
+  echo "$name was created"
+  break
+}
+
 then
-  options=("page" "container" "component" "quit")
+  options=("page" "container" "component" "redux module" "quit")
   select opt in "${options[@]}"
   do
     case $opt in
@@ -98,6 +108,9 @@ then
         ;;
     "component")
         create $opt
+        ;;
+    "redux module")
+        createReduxModule $opt
         ;;
     "quit")
         break

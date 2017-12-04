@@ -5,6 +5,7 @@
     "browser": true,
     "node": true,
     "es6": true,
+    "jest": true,
   },
   "plugins": [
     "react",
@@ -18,7 +19,7 @@
     "radix": 0,
     "space-infix-ops": 0,
     "import/extensions": [0, {js: 'never'}],
-    "semi": [0, "never"],
+    "semi": [2, "never"],
     "no-confusing-arrow": 0,
     "jsx-quotes": ["error", "prefer-single"],
     "no-console": ["error", { allow: ["warn", "error"] }],
