@@ -18,6 +18,7 @@ Hamish will then build out a react app with:
 - styled-components
 - normalize
 - redux-form
+- prop-types
 - esdoc
 - eslint
 - hot module replacement
