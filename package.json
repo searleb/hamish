@@ -1,0 +1,27 @@
+{
+  "name": "hamish",
+  "version": "1.0.0",
+  "description": "Take a copy of `hami.sh` and copy it to where ever you want to start a new `create-react-app`.",
+  "main": "hamish.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/searleb/hamish.git"
+  },
+  "author": "Bill Searle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/searleb/hamish/issues"
+  },
+  "homepage": "https://github.com/searleb/hamish#readme",
+  "dependencies": {
+    "chalk": "^2.3.1",
+    "commander": "^2.14.1",
+    "fs-extra": "^5.0.0",
+    "shelljs": "^0.8.1"
+  },
+  "preferGlobal": true,
+  "bin": "./hamish.js"
+}
