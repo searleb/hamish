@@ -1,9 +1,10 @@
-const { prompt } = require("inquirer");
+const {
+  prompt
+} = require("inquirer");
 const shell = require("shelljs");
 const chalk = require("chalk");
 
-const questions = [
-  {
+const questions = [{
     type: 'list',
     name: 'genOpt',
     message: 'What would you like to generate?',
@@ -40,14 +41,17 @@ const createComponent = (name, genOpt) => {
   shell.touch(`./${name}.test.js`)
   shell.echo(chalk.green(`${name} ${genOpt} was created!`));
 }
- 
+
 const generate = () => {
   prompt(questions).then((answers) => {
-    const { genOpt, name } = answers
+    const {
+      genOpt,
+      name
+    } = answers
     if (genOpt === 'redux module') {
       createReduxModule(name)
     } else {
-      createComponent(name, genOpt)      
+      createComponent(name, genOpt)
     }
   })
 }
