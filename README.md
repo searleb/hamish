@@ -1,4 +1,4 @@
-# I'm Hamish!
+# I'm Hamish! 👨‍💻
 ### I'll scaffold out a react project for you based on [create-react-app](https://github.com/facebook/create-react-app)!
 
 ## Why?
