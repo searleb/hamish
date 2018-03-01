@@ -39,7 +39,7 @@ npm install hamish -g
 - hot module replacement
 
 ## Folder structure, added and edited files
-```sh
+```
 |-- .env
 |-- .esdoc.json
 |-- .eslintrc
