@@ -8,7 +8,7 @@ I was also tired of manually creating component files and writing export stateme
 
 Hamish started life as a cleverly named bash script `hami.sh` but has been re-written into a node cli package so you can use it anywhere!
 
-This is a personal project to help myself out but I hope it can help you to :v:
+This is a personal project to help myself out but I hope it can help you too :v:
 
 ## Install
 
