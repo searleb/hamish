@@ -21,7 +21,7 @@ program
   );
 
 program
-  .command('installcreateapp')
+  .command('install')
   .description('Installs create-react-app.')
   .action(() => {
     console.log(chalk.yellow('Installing create-react-app'));

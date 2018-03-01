@@ -1,7 +1,7 @@
 {
   "name": "hamish",
   "version": "1.0.0",
-  "description": "Take a copy of `hami.sh` and copy it to where ever you want to start a new `create-react-app`.",
+  "description": "Hamish helps you setup a create-react-app and generates common patterns.",
   "main": "hamish.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -1,34 +1,90 @@
 # I'm Hamish!
+### I'll scaffold out a react project for you based on [create-react-app](https://github.com/facebook/create-react-app)!
 
-Take a copy of `hami.sh` and copy it to where ever you want to start a new `create-react-app`.
+## Why?
+Every time I started a new react app I found myself going around copy and pasting my redux, router, axios, etc etc setup from previous projects so I created Hamish to scaffold out my setup for me.
 
-From your folder run:
+I was also tired of manually creating component files and writing export statements so the generator function was added to handle components, containers, pages and redux modules.
+
+Hamish started life as a cleverly named bash script `hami.sh` but has been re-written into a node cli package so you can use it anywhere!
+
+This is a personal project to help myself out but I hope it can help you to :v:
+
+## Install
 
 ```sh
-./hami.sh go
+npm install hamish -g
 ```
 
-`hami.sh` will use `yarn` if detected, otherwise will default to `npm`.
+## Usage
 
+* `hamish install` -- Installs `create-react-app`
+* `hamish start` -- Starts a new react app and installs the Hamish setup 
+* `hamish generate | g` -- Starts component generator
+* `hamish -h` -- help
 
-Hamish will then build out a react app with:
-- react-router
-- redux
+## What's installed on top:
+
 - axios
-- styled-components
-- normalize
-- redux-form
-- prop-types
 - esdoc
 - eslint
-- hot module replacement
 - grid-styled
+- normalize.css
+- prop-types
+- react-router-dom v4
+- redux
+- redux-form
+- redux-thunk
+- styled-components
+- hot module replacement
 
-## Commands
-`./hami.sh install`: Installs `create-react-app`.
+## Folder structure, added and edited files
+```sh
+|-- .env
+|-- .esdoc.json
+|-- .eslintrc
+|-- src
+    |-- App.js
+    |-- index.js
+    |-- api
+    |   |-- config.js
+    |-- components
+    |   |-- index.js
+    |   |-- Grid
+    |       |-- Grid.js
+    |-- containers
+    |   |-- index.js
+    |-- helpers
+    |   |-- index.js
+    |-- pages
+    |   |-- index.js
+    |-- redux
+    |   |-- store.js
+    |   |-- modules
+    |       |-- index.js
+    |__ styled-components
+    |   |-- theme.js  
+```
 
-`./hami.sh go`: Kicks off a new `create-react-app` project.
 
-`./hami.sh new`: Creates a new page, container or component folder with [name].js and [name].test.js files. Or a new redux module.
+## Generator
+Command: `hamish g`
 
-`./hami.sh help`: Basically this again.
+Will ask what kind of component you want to generate:
+* component
+* container
+* page
+* redux module
+
+ and will generate for example:
+```
+|-- src
+    |-- components
+        |-- <name>
+            |-- <name>.js
+            |-- <name>.test.js
+```
+and will add `export default { <name> } from './<name>/<name>` to the index.js so the component is ready to be imported.
+
+
+
