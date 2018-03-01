@@ -1,6 +1,6 @@
 {
   "name": "hamish",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Hamish helps you setup a create-react-app and generates common patterns.",
   "main": "hamish.js",
   "scripts": {
@@ -10,6 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/searleb/hamish.git"
   },
+  "keywords": ["react", "cli", "create-react-app", "react-router", "scaffold", "redux"],
   "author": "Bill Searle <billsearle@gmail.com>",
   "license": "ISC",
   "bugs": {
