@@ -5,13 +5,13 @@ const shell = require('shelljs')
 const chalk = require('chalk')
 const {
   prompt
-} = require("inquirer")
+} = require('inquirer')
 
 const start = require('./scripts/start')
 const generate = require('./scripts/generate')
 
 program
-  .version("0.0.1")
+  .version('0.0.1')
   .description(
     chalk.yellow(`
     Hello, I'm Hamish!
@@ -25,7 +25,7 @@ program
   .description('Installs create-react-app.')
   .action(() => {
     console.log(chalk.yellow('Installing create-react-app'));
-    shell.exec("npm install -g create-react-app", ({
+    shell.exec('npm install -g create-react-app', ({
       stderr
     }) => {
       stderr ? console.log(chalk.red(stderr)) : console.log(chalk.green('Success!'));
@@ -45,15 +45,15 @@ program
   })
 
 program
-  .command("generate")
-  .alias("g")
-  .description('Generates a new redux module, page, container or component folder with [name].js and [name].test.js')
+  .command('generate')
+  .alias('g')
+  .description('Generates a new redux module, page, container or component folder with <name>.js and <name>.test.js')
   .action(() => {
     generate()
   })
 
 // Assert that a VALID command was provided 
-if (!process.argv.slice(2).length || !/[arudl]/.test(process.argv.slice(2))) {
+if (!process.argv.slice(2).length) {
   program.outputHelp();
   process.exit();
 }

@@ -10,7 +10,7 @@ const NotFound404 = () => (
   </div>
 )
 
-const Home = () => <h1>Home</h1>
+const Home = () => <h1 style={{ textAlign: 'center' }}>Hamish ✌️</h1>
 
 const App = () => (
   <BrowserRouter>

@@ -10,12 +10,12 @@
     "type": "git",
     "url": "git+https://github.com/searleb/hamish.git"
   },
-  "author": "Bill Searle",
+  "author": "Bill Searle <billsearle@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/searleb/hamish/issues"
   },
-  "homepage": "https://github.com/searleb/hamish#readme",
+  "homepage": "https://github.com/searleb/hamish",
   "dependencies": {
     "chalk": "^2.3.1",
     "commander": "^2.14.1",

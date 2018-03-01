@@ -8,7 +8,7 @@ const fs = require('fs-extra');
 const PRODUCTION_PACKAGES = 'axios prop-types react-router-dom styled-components normalize.css redux-form grid-styled';
 const REDUX_PACKAGES = 'redux react-redux redux-thunk';
 const DEV_PACKAGES =
-  "esdoc esdoc-standard-plugin esdoc-jsx-plugin eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y@5 eslint-plugin-react source-map-explorer";
+  'esdoc esdoc-standard-plugin esdoc-jsx-plugin eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y@5 eslint-plugin-react source-map-explorer';
 const GITHUB_RAW_URL = 'https://raw.githubusercontent.com/searleb/hamish/master';
 const GITHUB_FOLDER_URL = 'https://github.com/searleb/hamish/trunk';
 

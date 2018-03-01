@@ -1,8 +1,8 @@
 const {
   prompt
-} = require("inquirer");
-const shell = require("shelljs");
-const chalk = require("chalk");
+} = require('inquirer');
+const shell = require('shelljs');
+const chalk = require('chalk');
 
 const questions = [{
     type: 'list',
