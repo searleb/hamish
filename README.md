@@ -24,6 +24,7 @@ npm install hamish -g
 * `hamish -h` -- help
 
 ## What's installed on top:
+Hamish will use yarn if installed, otherwise will default to npm.
 
 - axios
 - esdoc
