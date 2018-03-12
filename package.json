@@ -1,6 +1,6 @@
 {
   "name": "hamish",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Hamish helps you setup a create-react-app and generates common patterns.",
   "main": "hamish.js",
   "scripts": {
