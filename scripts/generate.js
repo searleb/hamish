@@ -18,7 +18,7 @@ const questions = [{
   {
     type: 'input',
     name: 'name',
-    message: 'What would you like the component to be named?'
+    message: 'What should it be named?'
   }
 ]
 
